@@ -13,7 +13,7 @@ const loadingSpinner = function (mainBody) {
 
 const allRecipes = async () => {
     loadingSpinner(recipeContainer);
-    const res = await fetch('https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bcc08');
+    const res = await fetch('https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bccbc');
     const data = await res.json();
     let recipeData = data.data.recipe;
     const htmlData = `
@@ -21,7 +21,7 @@ const allRecipes = async () => {
                         <img src='${recipeData.image_url}'>
                     </div>
                     <div class='itemName'>
-                        <h2>${recipeData.title}</h2>
+                        <h3>${recipeData.title}</h3>
                     </div>
                     <div class='item_recipeInfo'>
                         <div class='cookingTime'>
