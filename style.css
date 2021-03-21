@@ -39,8 +39,8 @@
     height:820px;
     width: 25%;
     border-bottom-left-radius: 25px;
-    background-color: #80808066;
-    background-color: white ;
+    background-color: #80808024;
+    /* background-color: white ; */
 }
 .recipe_body{
     display: flex;
@@ -54,7 +54,7 @@
 .item_image{
     width: 100%;
     height: 300px;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 .item_image img{
     width: 100%;
@@ -75,7 +75,7 @@
     width: 100%;
     height: 160px;
     border-bottom-right-radius: 25px;
-    background-color: #f9f9f980 ;
+    background-color: #f9f9f980;
 }
 .websiteInfo{
     display: flex;
@@ -104,7 +104,7 @@
     flex-direction: row;
     width: 360px;
     height: 53px;
-    margin-left: 100px;
+    margin-left: 30px;
 }
 .searchBox input[type='text']{
     padding-left: 20px;
@@ -130,7 +130,7 @@
     display: flex;
     flex-direction: row;
     padding: 18px;
-    margin-left: 170px;
+    margin-left: 210px;
     width: 150px;
     height:53px;
 }
@@ -146,13 +146,14 @@
 .itemName
 {
     font-family: 'Quattrocento Sans', sans-serif;
+    max-width: 400px;
     width: auto;
     height: auto;
     padding: 10px;
     position: absolute;
     background-color: #FFFFFF;
     top: 41%;
-    left: 53%;
+    left: 45%;
     color: #F9102C;
 }
 .item_recipeInfo
@@ -202,6 +203,17 @@ margin-left: 10px;
 .item_ingredients ul{
     font-family: 'Quattrocento Sans', sans-serif;
     list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+.item_ingredients li{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+    margin-top: 5px;
+    width: 300px;
 }
 .item_originalSource pre {
     font-family: 'Quattrocento Sans', sans-serif;
@@ -252,4 +264,37 @@ margin-left: 10px;
     outline: none;
     margin-top: 30px;
     margin-left: 65%;
+}
+.initialMessage{
+    font-family: 'Quattrocento Sans', sans-serif;
+    text-align: center;
+}
+.initialMessage h1{
+    color: #F9102C;
+    padding-top: 50px;
+}
+.initialMessage p{
+    padding: 30px;
+    margin : 0px 20px;
+    font-size: medium;
+    font-weight: bold;
+}
+.spinner{
+    width: 60px;
+    height: 60px;
+    margin-left: 50%;
+    margin-top: 10%;
+}
+.spinnerRoll{
+    width: 60px;
+    height: 60px;
+    animation: rotate 2s infinite linear;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
