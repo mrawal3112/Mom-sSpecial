@@ -1,0 +1,255 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.bg-blur{
+  background-image: url("Images/background.jpg");
+  filter: blur(8px);
+  height: 950px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;    
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.recipe_container
+{
+    margin: 55px 120px;
+    width: auto;
+    height: 900px;
+    border-radius: 25px;
+    background-color: white;    
+}
+.recipe_header{
+    padding: 15px;
+    height: 80px;
+    width: auto;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: #F9F5F3 ;
+    display: flex;
+    flex-direction: row;
+}
+.items_list{
+    height:820px;
+    width: 25%;
+    border-bottom-left-radius: 25px;
+    background-color: #80808066;
+    background-color: white ;
+}
+.recipe_body{
+    display: flex;
+    flex-direction: row;
+}
+.recipe_infoContainer{
+    width: 75%;
+    height: 750px;
+    border-bottom-right-radius: 25px;
+}
+.item_image{
+    width: 100%;
+    height: 300px;
+    opacity: 0.6;
+}
+.item_image img{
+    width: 100%;
+    height: 300px;
+}
+.item_recipeInfo{
+    width: 100%;
+    height: 85px;
+    background-color: rgb(196 196 196 / 16%);
+}
+.item_ingredients{
+    width: 100%;
+    height: 275px;
+    background-color: rgb(196 196 196 / 25%);
+}
+.item_originalSource
+{
+    width: 100%;
+    height: 160px;
+    border-bottom-right-radius: 25px;
+    background-color: #f9f9f980;
+}
+.websiteInfo{
+    display: flex;
+    flex-direction: row;
+    width: 260px;
+    height: 53px;
+    margin-left: 50px;
+}
+.websiteLogo
+{
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+.logoImage{
+    width:40px;
+    height: 40px;
+}
+.siteName
+{
+    font-family: 'Permanent Marker', cursive;
+    padding: 5px;
+}
+.searchBox{
+    display: flex;
+    flex-direction: row;
+    width: 360px;
+    height: 53px;
+    margin-left: 100px;
+}
+.searchBox input[type='text']{
+    padding-left: 20px;
+    font-family: 'Quattrocento Sans', sans-serif;;
+    margin: 10px;
+    height: 35px;
+    width: 250px;
+    border-radius: 25px;
+    border: 0.5px solid gray;
+    outline: none;
+}
+.searchBox button{
+    margin: 10px;
+    height: 35px;
+    width: 100px;
+    border-radius: 25px;
+    border: 0.5px solid gray;
+    margin-left: -50px;
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: medium;
+}
+.bookmark{
+    display: flex;
+    flex-direction: row;
+    padding: 18px;
+    margin-left: 170px;
+    width: 150px;
+    height:53px;
+}
+.bookmarkLogo,.bookmarkImage{
+    width: 20px;
+    height: 20px;
+}
+.bookmarkTitle{
+    margin-left: 5px;
+    padding: 2px;
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+.itemName
+{
+    font-family: 'Quattrocento Sans', sans-serif;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    position: absolute;
+    background-color: #FFFFFF;
+    top: 41%;
+    left: 53%;
+    color: #F9102C;
+}
+.item_recipeInfo
+{
+    display: flex;
+    flex-direction: row;
+}
+.cookingTime,.peopleQuantity
+{
+    display: flex;
+    flex-direction: row;
+    width: 175px ;
+    height: 50px;
+    margin-left: 50px;
+    margin-top: 35px;
+}
+.clockImage{
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+.clockImage img{
+    width: 30px;
+    height: 30px;
+}
+.peopleImage{
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+.peopleImage img{
+    width: 30px;
+    height: 30px;
+}
+.timeTaken,.quantity{
+font-family: 'Quattrocento Sans', sans-serif;
+padding: 15px;
+margin-left: 10px;
+}
+.item_ingredients h2,.item_originalSource h2
+{
+    font-family: 'Quattrocento Sans', sans-serif;
+    text-align: center;
+    padding: 15px;
+    color: #F9102C;
+}
+.item_ingredients ul{
+    font-family: 'Quattrocento Sans', sans-serif;
+    list-style-type: none;
+}
+.item_originalSource pre {
+    font-family: 'Quattrocento Sans', sans-serif;
+    text-align: center;
+}
+.originalSite{
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
+    border: 0.5px solid gray;
+    background-color: white;
+    margin-top: 15px;
+    margin-left: 45%;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+.itemBox{
+    display: flex;
+    flex-direction: row;
+    height: 82.5px;
+    border-bottom: 0.5px solid black;
+}
+.itemImage{
+    width:60px;
+    height: 60px;
+    padding: 10px;
+}
+.itemImage img{
+    width: 60px;
+    height: 60px;
+}
+.itemData{
+    font-family: 'Quattrocento Sans', sans-serif;
+    padding: 25px;
+    margin-left: 10px;
+}
+.itemData h3{color: #F9102C;}
+.itemData h6{color: #00000099;}
+.nextPage{
+    background-color: white;
+    width: 80px ;
+    height: 30px;
+    border: 0.5px solid black;
+    border-radius: 25px;
+    outline: none;
+    margin-top: 30px;
+    margin-left: 65%;
+}
