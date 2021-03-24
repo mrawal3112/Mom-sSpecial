@@ -1,9 +1,16 @@
+import { API_URL } from '../config.js';
+import { getJsonData } from "../helper.js";
+
 export const motherSpecial = {
     recipe: {},
 }
 
 export const loadRecipe = async function (id) {
-    const res = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes/${id}`);
-    const data = await res.json();
-    motherSpecial.recipe = data.data.recipe;
+    try {
+        const data = await getJsonData(`${API_URL}/${id}`);
+        motherSpecial.recipe = data.data.recipe;
+    }
+    catch (err) {
+        alert(err);
+    }
 }

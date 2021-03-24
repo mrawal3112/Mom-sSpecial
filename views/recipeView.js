@@ -9,6 +9,15 @@ class recipeView {
         this.#recipeContainer.insertAdjacentHTML('afterbegin', htmlData);
     }
 
+    showSpinner() {
+        const spinner = `
+    <div class='spinner'>
+    <img src='Images/loading.png' alt='Spinner Image not Found' class='spinnerRoll'>; 
+    </div>`;
+        this.#recipeContainer.innerHTML = '';
+        this.#recipeContainer.insertAdjacentHTML('afterbegin', spinner);
+    }
+
     #generatehtmlData() {
         return `
                 <div class='item_image'>
@@ -51,9 +60,9 @@ class recipeView {
                                 <img src='Images/checked.png' style='width: 15px; height: 15px; margin-top: 3px;'>
                                 </div>
                                 <div>
-                                    <h3 style='margin-left: 5px;'>${ing.quantity} ${ing.unit} / ${ing.description}</h3>
-                                </div>
-                                </li>`}).join('')};
+                                    <h3 style='margin-left: 5px;'>${ing.quantity ? ing.quantity : ''} ${ing.unit}  ${ing.description}</h3>
+                                </div >
+                                </li > `}).join('')};
                     </ul>
                 </div >
     <div class='item_originalSource'>
