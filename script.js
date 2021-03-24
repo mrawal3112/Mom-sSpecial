@@ -2,8 +2,7 @@
 
 import * as model from '../model.js';
 import recipeView from '../../views/recipeView.js';
-
-
+import searchItem from '../../views/searchItem.js';
 
 const allRecipes = async () => {
     try {
@@ -14,6 +13,7 @@ const allRecipes = async () => {
 
         recipeView.showSpinner(); // Load the Spinner in the recipeView
         await model.loadRecipe(recipeID); // async function is loaded so await is required
+
         let recipeData = model.motherSpecial.recipe;
 
         recipeView.render(recipeData); // this will create a function in recipeView.js file that will accept the data for display
@@ -24,11 +24,24 @@ const allRecipes = async () => {
 }
 
 
+const controlSearchResults = async function () { // obtain all the values from the API for searched item
+    try {
+        const value = searchItem.getValue();
+        if (!value) return;
+        await model.loadSearchResult(value);
+        console.log(model.motherSpecial.results);
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
 
+controlSearchResults();
 allRecipes();
 
 const init = () => {
     recipeView.listenEvent(allRecipes);
+    searchItem.listenEvent(controlSearchResults);
 }
 init();
 

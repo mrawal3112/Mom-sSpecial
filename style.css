@@ -134,6 +134,8 @@
     margin-left: -50px;
     font-family: 'Quattrocento Sans', sans-serif;
     font-size: medium;
+    outline: none;
+    cursor: pointer;
 }
 .bookmark{
     display: flex;
