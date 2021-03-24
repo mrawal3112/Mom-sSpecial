@@ -2,14 +2,14 @@ class recipeView {
     #recipeContainer = document.querySelector('.recipe_infoContainer');
     #recipeData;
 
-    render(data) {
+    render(data) { // render Function 
         this.#recipeData = data;
         this.#recipeContainer.innerHTML = '';
         const htmlData = this.#generatehtmlData();
         this.#recipeContainer.insertAdjacentHTML('afterbegin', htmlData);
     }
 
-    showSpinner() {
+    showSpinner() { // Spinner Class 
         const spinner = `
     <div class='spinner'>
     <img src='Images/loading.png' alt='Spinner Image not Found' class='spinnerRoll'>; 
@@ -18,7 +18,13 @@ class recipeView {
         this.#recipeContainer.insertAdjacentHTML('afterbegin', spinner);
     }
 
-    #generatehtmlData() {
+    listenEvent(eventContainer) { //event Handler
+        ['hashchange', 'load'].forEach(ev => {
+            window.addEventListener(ev, eventContainer);
+        });
+    }
+
+    #generatehtmlData() { // Recipe Container
         return `
                 <div class='item_image'>
                     <img src='${this.#recipeData.image_url}'>
@@ -62,7 +68,7 @@ class recipeView {
                                 <div>
                                     <h3 style='margin-left: 5px;'>${ing.quantity ? ing.quantity : ''} ${ing.unit}  ${ing.description}</h3>
                                 </div >
-                                </li > `}).join('')};
+                                </li > `}).join('')}
                     </ul>
                 </div >
     <div class='item_originalSource'>
@@ -74,6 +80,19 @@ class recipeView {
         <button class='originalSite'>Website</button>
     </div>
     `;
+    }
+
+    errorMessage(errr) {
+        const message = `<div class='errorMessage'>
+            <div class='errorImage'>
+                <img src='Images/cancel.png' alt="Couldn't find the picture" class='errorImage'>
+                        </div>
+                <div class='message'>
+                    <p>${errr}</p>
+                </div>
+            </div>`;
+        this.#recipeContainer.innerHTML = '';
+        this.#recipeContainer.insertAdjacentHTML('afterbegin', message);
     }
 }
 

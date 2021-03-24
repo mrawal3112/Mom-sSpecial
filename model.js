@@ -11,6 +11,6 @@ export const loadRecipe = async function (id) {
         motherSpecial.recipe = data.data.recipe;
     }
     catch (err) {
-        alert(err);
+        throw (`We are unable to process your request at this time. ${err} Try searching for a new recipe. `);
     }
 }
