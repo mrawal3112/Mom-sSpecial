@@ -263,11 +263,14 @@ margin-left: 10px;
 }
 .itemData{
     font-family: 'Quattrocento Sans', sans-serif;
-    padding: 25px;
+    padding: 15px;
+    margin-top: 5px;
     margin-left: 10px;
 }
-.itemData h3{color: #F9102C;}
-.itemData h6{color: #00000099;}
+.itemData h5{color: #F9102C;}
+.itemData h6{margin-top:2px;color: #00000099;}
+.itemData a{text-decoration: none;}
+
 .nextPage{
     background-color: white;
     width: 80px ;

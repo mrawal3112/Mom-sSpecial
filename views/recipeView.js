@@ -1,22 +1,7 @@
-class recipeView {
-    #recipeContainer = document.querySelector('.recipe_infoContainer');
-    #recipeData;
+import views from './views.js';
 
-    render(data) { // render Function 
-        this.#recipeData = data;
-        this.#recipeContainer.innerHTML = '';
-        const htmlData = this.#generatehtmlData();
-        this.#recipeContainer.insertAdjacentHTML('afterbegin', htmlData);
-    }
-
-    showSpinner() { // Spinner Class 
-        const spinner = `
-    <div class='spinner'>
-    <img src='Images/loading.png' alt='Spinner Image not Found' class='spinnerRoll'>; 
-    </div>`;
-        this.#recipeContainer.innerHTML = '';
-        this.#recipeContainer.insertAdjacentHTML('afterbegin', spinner);
-    }
+class recipeView extends views {
+    _recipeContainer = document.querySelector('.recipe_infoContainer');
 
     listenEvent(eventContainer) { //event Handler
         ['hashchange', 'load'].forEach(ev => {
@@ -24,13 +9,13 @@ class recipeView {
         });
     }
 
-    #generatehtmlData() { // Recipe Container
+    _generatehtmlData() { // Recipe Container
         return `
                 <div class='item_image'>
-                    <img src='${this.#recipeData.image_url}'>
+                    <img src='${this._recipeData.image_url}'>
                 </div>
                 <div class='itemName'>
-                    <h3>${this.#recipeData.title}</h3>
+                    <h3>${this._recipeData.title}</h3>
                 </div>
                 <div class='item_recipeInfo'>
                     <div class='cookingTime'>
@@ -38,7 +23,7 @@ class recipeView {
                             <img src='Images/clock.svg'>
                         </div>
                         <div class='timeTaken'>
-                            <h3>${this.#recipeData.cooking_time} Minutes</h3>
+                            <h3>${this._recipeData.cooking_time} Minutes</h3>
                         </div>
                     </div>
                     <div class='peopleQuantity'>
@@ -46,7 +31,7 @@ class recipeView {
                             <img src='Images/people.png'>
                         </div>
                         <div class="quantity">
-                            <h3>${this.#recipeData.servings} People</h3>
+                            <h3>${this._recipeData.servings} People</h3>
                         </div>
                     </div>
                     <div>
@@ -60,7 +45,7 @@ class recipeView {
                 <div class='item_ingredients'>
                     <h2>RECIPE INGREDIENTS</h2>
                     <ul>
-                    ${this.#recipeData.ingredients.map((ing) => {
+                    ${this._recipeData.ingredients.map((ing) => {
             return `<li>
                                 <div>
                                 <img src='Images/checked.png' style='width: 15px; height: 15px; margin-top: 3px;'>
@@ -74,25 +59,12 @@ class recipeView {
     <div class='item_originalSource'>
         <h2>HOW TO COOK IT</h2>
         <div>
-            <pre>This recipe was carefully designed and tested by <span style='font-weight: bold;'>${this.#recipeData.publisher}</span>
+            <pre>This recipe was carefully designed and tested by <span style='font-weight: bold;'>${this._recipeData.publisher}</span>
     Please check out directions at their website.</pre>
         </div>
         <button class='originalSite'>Website</button>
     </div>
     `;
-    }
-
-    errorMessage(errr) {
-        const message = `<div class='errorMessage'>
-            <div class='errorImage'>
-                <img src='Images/cancel.png' alt="Couldn't find the picture" class='errorImage'>
-                        </div>
-                <div class='message'>
-                    <p>${errr}</p>
-                </div>
-            </div>`;
-        this.#recipeContainer.innerHTML = '';
-        this.#recipeContainer.insertAdjacentHTML('afterbegin', message);
     }
 }
 

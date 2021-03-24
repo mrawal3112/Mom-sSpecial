@@ -3,6 +3,7 @@
 import * as model from '../model.js';
 import recipeView from '../../views/recipeView.js';
 import searchItem from '../../views/searchItem.js';
+import searchedResults from '../../views/searchResult.js';
 
 const allRecipes = async () => {
     try {
@@ -26,11 +27,19 @@ const allRecipes = async () => {
 
 const controlSearchResults = async function () { // obtain all the values from the API for searched item
     try {
+
         const value = searchItem.getValue();
         if (!value) return;
+
+        searchedResults.showSpinner();
+
         await model.loadSearchResult(value);
-        console.log(model.motherSpecial.results);
+
+        searchedResults.render(model.motherSpecial.results);
+
+
     }
+
     catch (err) {
         console.log(err);
     }
