@@ -17,23 +17,6 @@ class searchResult extends views {
             `
         }).join('');
     }
-    _paginationBox() {
-        return `
-        <div class='pagination'>
-                        <div>
-                            <button class='previousPage'><a href='#'>Page 0 </a><i
-                                    class='fa fa-arrow-left'></i></button>
-                        </div>
-                        <div>
-                            <button class='nextPage'><a href='#'>Page 2 </a><i class='fa fa-arrow-right'></i></button>
-                        </div>
-                    </div> `;
-    }
-    displayData() {
-        const pagination = this._paginationBox();
-        this._recipeContainer.insertAdjacentHTML('beforeend', pagination);
-    }
-
 }
 
 export default new searchResult();

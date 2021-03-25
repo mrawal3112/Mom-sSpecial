@@ -31,6 +31,7 @@ export const loadSearchResult = async function (item) { // determine the data fr
     }
 }
 export const searchedDataAccordingToPage = function (page) {
+    motherSpecial.searchedItem.pageNumber = page;
     const start = (page - 1) * 10;
     const end = page * 10;
     return motherSpecial.searchedItem.results.slice(start, end);
