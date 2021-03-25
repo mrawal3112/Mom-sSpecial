@@ -18,7 +18,7 @@ export default class view {
         this._recipeContainer.insertAdjacentHTML('afterbegin', spinner);
     }
 
-    errorMessage(errr) {
+    errorMessage(errr) { //displaying Error Message
         const message = `<div class='errorMessage'>
             <div class='errorImage'>
                 <img src='Images/cancel.png' alt="Couldn't find the picture" class='errorImage'>
@@ -29,6 +29,7 @@ export default class view {
             </div>`;
         this._recipeContainer.innerHTML = '';
         this._recipeContainer.insertAdjacentHTML('afterbegin', message);
+
     }
 
 }

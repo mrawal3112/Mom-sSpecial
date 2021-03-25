@@ -28,16 +28,14 @@ const allRecipes = async () => {
 const controlSearchResults = async function () { // obtain all the values from the API for searched item
     try {
 
-        const value = searchItem.getValue();
-        if (!value) return;
+        const value = searchItem.getValue(); // it will retrieve the value from the search box 
+        if (!value) return; // check if the value is present or not
 
-        searchedResults.showSpinner();
+        searchedResults.showSpinner(); // loading spinner before loading the data
 
-        await model.loadSearchResult(value);
+        await model.loadSearchResult(value); //retrieve the data from the API
 
-        searchedResults.render(model.motherSpecial.results);
-
-
+        searchedResults.render(model.motherSpecial.results); // Display the data to the view 
     }
 
     catch (err) {
