@@ -341,7 +341,7 @@ font-size: 15px;
     height: 60px;
     display: flex;
     flex-direction: row;
-    display: none;
+    /* display: none; */
 }
 .pagination a{
     text-decoration: none;
