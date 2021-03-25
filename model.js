@@ -3,7 +3,11 @@ import { getJsonData } from "../helper.js";
 
 export const motherSpecial = {
     recipe: {},
-    results: [],
+    searchedItem: {
+        results: [],
+        pageNumber: 1,
+        NoOfItemsDisplayed: 10,
+    }
 }
 
 export const loadRecipe = async function (id) {
@@ -16,13 +20,18 @@ export const loadRecipe = async function (id) {
     }
 }
 
-export const loadSearchResult = async function (item) { // detrmine the data from the API
+export const loadSearchResult = async function (item) { // determine the data from the API
     try {
         const data = await getJsonData(`${API_URL}?search=${item}`);
-        motherSpecial.results = data.data.recipes;
+        motherSpecial.searchedItem.results = data.data.recipes;
     }
     catch (err) {
         alert(err);
         throw err;
     }
+}
+export const searchedDataAccordingToPage = function (page) {
+    const start = (page - 1) * 10;
+    const end = page * 10;
+    return motherSpecial.searchedItem.results.slice(start, end);
 }

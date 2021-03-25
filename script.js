@@ -35,7 +35,7 @@ const controlSearchResults = async function () { // obtain all the values from t
 
         await model.loadSearchResult(value); //retrieve the data from the API
 
-        searchedResults.render(model.motherSpecial.results); // Display the data to the view 
+        searchedResults.render(model.searchedDataAccordingToPage(1)); // Display the data to the view 
     }
 
     catch (err) {

@@ -1,7 +1,7 @@
 import views from './views.js';
 
 class searchResult extends views {
-    _recipeContainer = document.querySelector('.items_list');
+    _recipeContainer = document.querySelector('.items');
 
     _generatehtmlData() {
         console.log(this._recipeData);
@@ -12,14 +12,13 @@ class searchResult extends views {
                         <img src='${items.image_url}'>
                     </div>
                     <div class='itemData'>
-                        <a href='#${items.id}'><h5>${items.title}</h5></a>
+                        <a href='#${items.id}'><h4>${items.title}</h4></a>
                         <h6>${items.publisher}</h6>
                     </div>
                 </div>
             `
         }).join('');
     }
-
 }
 
 export default new searchResult();

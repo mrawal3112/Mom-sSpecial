@@ -2,7 +2,6 @@ import views from './views.js';
 
 class recipeView extends views {
     _recipeContainer = document.querySelector('.recipe_infoContainer');
-
     listenEvent(eventContainer) { //event Handler
         ['hashchange', 'load'].forEach(ev => {
             window.addEventListener(ev, eventContainer);
@@ -62,7 +61,7 @@ class recipeView extends views {
             <pre>This recipe was carefully designed and tested by <span style='font-weight: bold;'>${this._recipeData.publisher}</span>
     Please check out directions at their website.</pre>
         </div>
-        <button class='originalSite'>Website</button>
+        <button class='originalSite'><a href='${this._recipeData.source_url}' style='text-decoration:none;color:black;'>Website</a></button>
     </div>
     `;
     }

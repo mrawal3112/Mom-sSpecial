@@ -29,7 +29,6 @@ export default class view {
             </div>`;
         this._recipeContainer.innerHTML = '';
         this._recipeContainer.insertAdjacentHTML('afterbegin', message);
-
     }
 
 }
