@@ -36,7 +36,7 @@ const controlSearchResults = async function () { // obtain all the values from t
 
         await model.loadSearchResult(value); //retrieve the data from the API
 
-        searchedResults.render(model.searchedDataAccordingToPage(6)); // Display the data to the view
+        searchedResults.render(model.searchedDataAccordingToPage(1)); // Display the data to the view
         paginationData.render(model.motherSpecial.searchedItem);
     }
 
@@ -45,12 +45,18 @@ const controlSearchResults = async function () { // obtain all the values from t
     }
 }
 
+const paginationListenEvent = (page) => {
+    searchedResults.render(model.searchedDataAccordingToPage(page)); // Display the data to the view
+    paginationData.render(model.motherSpecial.searchedItem);
+}
+
 controlSearchResults();
 allRecipes();
 
 const init = () => {
     recipeView.listenEvent(allRecipes);
     searchItem.listenEvent(controlSearchResults);
+    paginationData.listenClick(paginationListenEvent)
 }
 init();
 
