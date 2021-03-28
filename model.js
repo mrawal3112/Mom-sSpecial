@@ -10,7 +10,7 @@ export const motherSpecial = {
     }
 }
 
-export const loadRecipe = async function (id) {
+export const loadRecipe = async function (id) { //loading the recipe
     try {
         const data = await getJsonData(`${API_URL}/${id}`);
         motherSpecial.recipe = data.data.recipe;
@@ -30,9 +30,17 @@ export const loadSearchResult = async function (item) { // determine the data fr
         throw err;
     }
 }
-export const searchedDataAccordingToPage = function (page) {
+export const searchedDataAccordingToPage = function (page) {  //Pagination function
     motherSpecial.searchedItem.pageNumber = page;
     const start = (page - 1) * 10;
     const end = page * 10;
     return motherSpecial.searchedItem.results.slice(start, end);
+}
+
+export const updateServingsData = function (newData) { // function to update quantity of ingredients
+    motherSpecial.recipe.ingredients.forEach(ing => {
+        ing.quantity = +(ing.quantity * newData / motherSpecial.recipe.servings);
+    });
+    if (newData > 0) // change the value only if the serving is either 1 or more than one.
+        motherSpecial.recipe.servings = +newData;
 }

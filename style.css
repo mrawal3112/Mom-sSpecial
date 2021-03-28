@@ -153,6 +153,12 @@
     width: 20px;
     height: 20px;
 }
+.bookmarkSign{
+    width: 25px;
+    height: 25px;
+    margin-top: 20%;
+    margin-left: 200px;
+}
 .bookmarkTitle{
     margin-left: 5px;
     padding: 2px;
@@ -231,7 +237,7 @@ margin-left: 10px;
     flex-direction: row;
     margin-left: 10%;
     margin-top: 5px;
-    width: 150px;
+    width: 175px;
     font-size: 12px;
 }
 .item_originalSource pre {

@@ -20,6 +20,7 @@ const allRecipes = async () => {
 
         recipeView.render(recipeData); // this will create a function in recipeView.js file that will accept the data for display
     }
+
     catch (err) {
         recipeView.errorMessage(err);
     }
@@ -50,13 +51,22 @@ const paginationListenEvent = (page) => {
     paginationData.render(model.motherSpecial.searchedItem);
 }
 
+const updateServings = function (newNoOfPeople) {
+    if (newNoOfPeople > 0) //updating the servings only if there are one or more than one servings
+        model.updateServingsData(newNoOfPeople); // update the quantity of ingredients
+
+
+    recipeView.render(model.motherSpecial.recipe); // re-rendering the data to the view
+}
+
 controlSearchResults();
 allRecipes();
 
 const init = () => {
     recipeView.listenEvent(allRecipes);
     searchItem.listenEvent(controlSearchResults);
-    paginationData.listenClick(paginationListenEvent)
+    paginationData.listenClick(paginationListenEvent);
+    recipeView.updateData(updateServings);
 }
 init();
 

@@ -8,6 +8,13 @@ class recipeView extends views {
         });
     }
 
+    updateData(handler) { // handle the click event on images 
+        this._recipeContainer.addEventListener('click', function (e) {
+            const action = e.target.closest('img');
+            if (!action) return;
+            handler(action.dataset.updateServings);
+        })
+    }
     _generatehtmlData() { // Recipe Container
         return `
                 <div class='item_image'>
@@ -34,11 +41,14 @@ class recipeView extends views {
                         </div>
                     </div>
                     <div>
-                        <img src='Images/add.png' style='width: 25px; height: 25px; margin-top: 45px;'>
+                        <img src='Images/add.png' style='width: 25px; height: 25px; margin-top: 45px;' data-update-servings = ${this._recipeData.servings + 1}>
                     </div>
                     <div>
                         <img src='Images/minus.png'
-                            style='width: 25px; height: 25px; margin-top: 45px;margin-left: 20px;'>
+                            style='width: 25px; height: 25px; margin-top: 45px;margin-left: 20px;' data-update-servings = ${this._recipeData.servings - 1}>
+                    </div>
+                    <div>
+                    <img src='Images/bookmark-white.png' alt='No Image Found' class='bookmarkSign'>
                     </div>
                 </div>
                 <div class='item_ingredients'>
