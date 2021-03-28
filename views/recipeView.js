@@ -42,11 +42,11 @@ class recipeView extends views {
                         </div>
                     </div>
                     <div>
-                        <img src='Images/add.png' style='width: 25px; height: 25px; margin-top: 45px;' data-update-servings = ${this._recipeData.servings + 1}>
+                        <img src='Images/add.png' style='width: 25px; height: 25px; margin-top: 40px;' data-update-servings = ${this._recipeData.servings + 1}>
                     </div>
                     <div>
                         <img src='Images/minus.png'
-                            style='width: 25px; height: 25px; margin-top: 45px;margin-left: 20px;' data-update-servings = ${this._recipeData.servings - 1}>
+                            style='width: 25px; height: 25px; margin-top: 40px;margin-left: 20px;' data-update-servings = ${this._recipeData.servings - 1}>
                     </div>
                     <div>
                     <img src='Images/bookmark-white.png' alt='No Image Found' class='bookmarkSign'>
