@@ -156,11 +156,22 @@
     height: 20px;
 }
 .bookmarkSign{
-    width: 25px;
-    height: 25px;
-    margin-top: 18%;
-    margin-left: 200px;
+    width: 20px;
+    height: 20px;
+    margin: 10.5px;
 }
+.bookmarkImg{
+    width:40px;
+    height: 40px;
+    margin-top: 3%;
+    margin-left: 200px;
+    border-radius: 25px;
+}
+
+.bookmarkFill{
+    background-color: #F9102C;
+}
+
 .bookmarkTitle{
     margin-left: 5px;
     padding: 2px;
@@ -376,4 +387,21 @@ font-size: 15px;
 .pagination a{
     text-decoration: none;
     color: black;
+}
+.bookmarked{
+    width:40px ;
+    height: 40px;
+    background-color: white;
+}
+.minusSymbol
+{
+    width: 25px;
+    height: 25px;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.addSymbol{
+    width: 25px;
+    height: 25px;
+    margin-top: 40px;
 }

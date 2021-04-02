@@ -59,6 +59,11 @@ const updateServings = function (newNoOfPeople) {
     recipeView.render(model.motherSpecial.recipe); // re-rendering the data to the view
 }
 
+const addBookmarks = function () {
+    model.addBookmark(model.motherSpecial.recipe);
+    recipeView.render(model.motherSpecial.recipe);
+
+}
 controlSearchResults();
 allRecipes();
 
@@ -67,6 +72,7 @@ const init = () => {
     searchItem.listenEvent(controlSearchResults);
     paginationData.listenClick(paginationListenEvent);
     recipeView.updateData(updateServings);
+    recipeView.addRecipeBookmark(addBookmarks);
 }
 init();
 

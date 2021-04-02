@@ -7,7 +7,8 @@ export const motherSpecial = {
         results: [],
         pageNumber: 1,
         NoOfItemsDisplayed: 10,
-    }
+    },
+    bookmarks: [],
 }
 
 export const loadRecipe = async function (id) { //loading the recipe
@@ -43,4 +44,11 @@ export const updateServingsData = function (newData) { // function to update qua
     });
     if (newData > 0) // change the value only if the serving is either 1 or more than one.
         motherSpecial.recipe.servings = +newData;
+}
+
+export const addBookmark = function (recipe) {
+    motherSpecial.bookmarks.push(recipe);
+    console.log(motherSpecial.bookmarks);
+    if (recipe.id == motherSpecial.recipe.id)
+        motherSpecial.recipe.bookmarked = true;
 }

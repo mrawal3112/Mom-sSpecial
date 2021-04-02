@@ -13,7 +13,7 @@ class paginationView extends views {
         console.log(pageNumber);
         console.log(noOfPages);
         console.log(this._recipeData.results.length);
-        if (pageNumber === noOfPages) {
+        if (pageNumber !== 1 && pageNumber === noOfPages) {
             return `<div>
         <button data-pagenumber = ${pageNumber - 1} class='previousPage'>Page ${pageNumber - 1} <i
                 class='fa fa-arrow-left'></i></button>
@@ -29,7 +29,7 @@ class paginationView extends views {
         </div>`;
         }
         else {
-            return ``;
+            return '';
         }
     }
 

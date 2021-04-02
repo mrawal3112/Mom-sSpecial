@@ -1,6 +1,5 @@
 import views from './views.js';
 
-
 class recipeView extends views {
     _recipeContainer = document.querySelector('.recipe_infoContainer');
     listenEvent(eventContainer) { //event Handler
@@ -14,6 +13,14 @@ class recipeView extends views {
             const action = e.target.closest('img');
             if (!action) return;
             handler(action.dataset.updateServings);
+        })
+    }
+
+    addRecipeBookmark(handler) {
+        this._recipeContainer.addEventListener('click', function (e) {
+            const bookmarked = e.target.closest('.bookmarkImg');
+            if (!bookmarked) return;
+            handler();
         })
     }
     _generatehtmlData() { // Recipe Container
@@ -42,15 +49,15 @@ class recipeView extends views {
                         </div>
                     </div>
                     <div>
-                        <img src='Images/add.png' style='width: 25px; height: 25px; margin-top: 40px;' data-update-servings = ${this._recipeData.servings + 1}>
+                        <img src='Images/add.png' class='addSymbol' data-update-servings = ${this._recipeData.servings + 1}>
                     </div>
                     <div>
-                        <img src='Images/minus.png'
-                            style='width: 25px; height: 25px; margin-top: 40px;margin-left: 20px;' data-update-servings = ${this._recipeData.servings - 1}>
+                        <img src='Images/minus.png' class='minusSymbol'data-update-servings = ${this._recipeData.servings - 1}>
                     </div>
-                    <div>
+                    <div class='bookmarkImg ${this._recipeData.bookmarked ? "bookmarkFill" : " "}'>
                     <img src='Images/bookmark-white.png' alt='No Image Found' class='bookmarkSign'>
                     </div>
+                    
                 </div>
                 <div class='item_ingredients'>
                     <h2>RECIPE INGREDIENTS</h2>
@@ -79,3 +86,4 @@ class recipeView extends views {
 }
 
 export default new recipeView();
+
