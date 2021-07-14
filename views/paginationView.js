@@ -15,7 +15,7 @@ class paginationView extends views {
         console.log(this._recipeData.results.length);
         if (pageNumber !== 1 && pageNumber === noOfPages) {
             return `<div>
-        <button data-pagenumber = ${pageNumber - 1} class='previousPage'>Page ${pageNumber - 1} <i
+        <button data-pagenumber = ${pageNumber - 1} class='nextPage'>Page ${pageNumber - 1} <i
                 class='fa fa-arrow-left'></i></button>
             </div>`;
         }

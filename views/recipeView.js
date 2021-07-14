@@ -54,7 +54,7 @@ class recipeView extends views {
                     <div>
                         <img src='Images/minus.png' class='minusSymbol'data-update-servings = ${this._recipeData.servings - 1}>
                     </div>
-                    <div class='bookmarkImg ${this._recipeData.bookmarked ? "bookmarkFill" : " "}'>
+                    <div class='bookmarkImg ${this._recipeData.bookmarked ? "bookmarkFill" : "unbookmark"}'>
                     <img src='Images/bookmark-white.png' alt='No Image Found' class='bookmarkSign'>
                     </div>
                     

@@ -1,6 +1,7 @@
 // Here we will write the cidefor the function which will be repeated through out the project many times
 import { TIMEOUT_SEC } from "../config.js";
 
+
 const timeout = function (sec) {
     return new Promise(function (_, reject) {
         setTimeout(function () {

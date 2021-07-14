@@ -172,6 +172,10 @@
     background-color: #F9102C;
 }
 
+.unbookmark{
+    background-color: none;
+}
+
 .bookmarkTitle{
     margin-left: 5px;
     padding: 2px;
@@ -249,7 +253,7 @@ margin-left: 6px;
 .item_ingredients li{
     display: flex;
     flex-direction: row;
-    margin-left: 6%;
+    margin-left:2.5rem;
     margin-top: 5px;
     width: 225px;
     font-size: 12px;
@@ -399,9 +403,11 @@ font-size: 15px;
     height: 25px;
     margin-top: 40px;
     margin-left: 20px;
+    cursor: pointer;
 }
 .addSymbol{
     width: 25px;
     height: 25px;
     margin-top: 40px;
+    cursor: pointer;
 }
