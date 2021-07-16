@@ -4,8 +4,7 @@
   "description": "",
   "main": "model.js",
   "dependencies": {
-    "fractional": "^1.0.0",
-    "requirejs": "^2.3.6"
+    "fractional": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
