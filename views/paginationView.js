@@ -10,8 +10,7 @@ class paginationView extends views {
             <button data-pagenumber = ${pageNumber + 1} class='nextPage'>Page ${pageNumber + 1} <i class='fa fa-arrow-right'></i></button>
         </div>`;
         }
-        console.log(pageNumber);
-        console.log(noOfPages);
+
         console.log(this._recipeData.results.length);
         if (pageNumber !== 1 && pageNumber === noOfPages) {
             return `<div>

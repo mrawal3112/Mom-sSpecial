@@ -1,4 +1,5 @@
 import views from './views.js';
+import { Fraction } from '/fractional.js';
 
 class recipeView extends views {
     _recipeContainer = document.querySelector('.recipe_infoContainer');
@@ -24,6 +25,8 @@ class recipeView extends views {
         })
     }
     _generatehtmlData() { // Recipe Container
+
+
         return `
                 <div class='item_image'>
                     <img src='${this._recipeData.image_url}'>
@@ -65,10 +68,10 @@ class recipeView extends views {
                     ${this._recipeData.ingredients.map((ing) => {
             return `<li>
                                 <div>
-                                <img src='Images/checked.png' style='width: 15px; height: 15px; margin-top: 3px;'>
+                                <img src='Images/checked.png' style='width: 15px; height: 15px; margin-top: 0px;'>
                                 </div>
                                 <div>
-                                    <h3 style='margin-left: 5px;'>${ing.quantity ? ing.quantity : ''} ${ing.unit}  ${ing.description}</h3>
+                                    <h3 style='margin-left: 5px;'>${ing.quantity ? new Fraction(ing.quantity).toString() : ''} ${ing.unit}  ${ing.description}</h3>
                                 </div >
                                 </li > `}).join('')}
                     </ul>

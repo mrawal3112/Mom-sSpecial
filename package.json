@@ -4,10 +4,8 @@
   "description": "",
   "main": "model.js",
   "dependencies": {
-    "core-js": "^3.15.2",
     "fractional": "^1.0.0",
-    "mathjs": "^9.4.4",
-    "regenerator": "^0.14.7"
+    "requirejs": "^2.3.6"
   },
   "devDependencies": {},
   "scripts": {
