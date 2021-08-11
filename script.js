@@ -60,10 +60,14 @@ const updateServings = function (newNoOfPeople) {
 }
 
 const addBookmarks = function () {
-    model.addBookmark(model.motherSpecial.recipe);
+    if (model.motherSpecial.recipe.bookmarked === true)
+        model.deleteBookmark(model.motherSpecial.recipe.id)
+    else
+        model.addBookmark(model.motherSpecial.recipe);
     recipeView.render(model.motherSpecial.recipe);
-
 }
+
+
 controlSearchResults();
 allRecipes();
 
@@ -73,6 +77,7 @@ const init = () => {
     paginationData.listenClick(paginationListenEvent);
     recipeView.updateData(updateServings);
     recipeView.addRecipeBookmark(addBookmarks);
+
 }
 init();
 

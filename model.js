@@ -15,6 +15,10 @@ export const loadRecipe = async function (id) { //loading the recipe
     try {
         const data = await getJsonData(`${API_URL}/${id}`);
         motherSpecial.recipe = data.data.recipe;
+        if (motherSpecial.bookmarks.some(bookmark => bookmark.id === id))
+            motherSpecial.recipe.bookmarked = true;
+        else
+            motherSpecial.recipe.bookmarked = false;
     }
     catch (err) {
         throw (`We are unable to process your request at this time. ${err} Try searching for a new recipe. `);
@@ -25,7 +29,9 @@ export const loadSearchResult = async function (item) { // determine the data fr
     try {
         const data = await getJsonData(`${API_URL}?search=${item}`);
         motherSpecial.searchedItem.results = data.data.recipes;
+        motherSpecial.searchedItem.pageNumber = 1;
     }
+
     catch (err) {
         alert(err);
         throw err;
@@ -46,9 +52,18 @@ export const updateServingsData = function (newData) { // function to update qua
         motherSpecial.recipe.servings = +newData;
 }
 
+export const deleteBookmark = function (id) {
+    const index = motherSpecial.bookmarks.findIndex(el => el.id === id)
+    motherSpecial.bookmarks.splice(index, 1);
+    console.log(motherSpecial.bookmarks);
+    if (id === motherSpecial.recipe.id)
+        motherSpecial.recipe.bookmarked = false;
+}
+
 export const addBookmark = function (recipe) {
     motherSpecial.bookmarks.push(recipe);
     console.log(motherSpecial.bookmarks);
     if (recipe.id == motherSpecial.recipe.id)
         motherSpecial.recipe.bookmarked = true;
 }
+

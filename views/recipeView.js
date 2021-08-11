@@ -14,7 +14,7 @@ class recipeView extends views {
             const action = e.target.closest('img');
             if (!action) return;
             handler(action.dataset.updateServings);
-        })
+        });
     }
 
     addRecipeBookmark(handler) {
@@ -26,7 +26,7 @@ class recipeView extends views {
     }
     _generatehtmlData() { // Recipe Container
 
-
+        // console.log(this._recipeData);
         return `
                 <div class='item_image'>
                     <img src='${this._recipeData.image_url}'>
