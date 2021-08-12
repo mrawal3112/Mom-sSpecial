@@ -26,7 +26,6 @@ class recipeView extends views {
     }
     _generatehtmlData() { // Recipe Container
 
-        // console.log(this._recipeData);
         return `
                 <div class='item_image'>
                     <img src='${this._recipeData.image_url}'>
