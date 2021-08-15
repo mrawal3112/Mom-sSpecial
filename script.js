@@ -5,7 +5,17 @@ import recipeView from '../../views/recipeView.js';
 import searchItem from '../../views/searchItem.js';
 import searchedResults from '../../views/searchResult.js';
 import paginationData from '../../views/paginationView.js';
+import bookmarkView from '../../views/bookmarkView.js';
 
+const bookmarkButton = document.querySelector('.bookmark');
+const bookmarkBox = document.querySelector('.bookmark_list_box');
+const recipeBox = document.querySelector('.recipe_infoContainer');
+bookmarkButton.addEventListener('click', function () {
+    bookmarkBox.style.opacity = 1;
+});
+recipeBox.addEventListener('click', function () {
+    bookmarkBox.style.opacity = 0;
+})
 const allRecipes = async () => {
     try {
 
@@ -54,17 +64,17 @@ const paginationListenEvent = (page) => {
 const updateServings = function (newNoOfPeople) {
     if (newNoOfPeople > 0) //updating the servings only if there are one or more than one servings
         model.updateServingsData(newNoOfPeople); // update the quantity of ingredients
-
-
     recipeView.render(model.motherSpecial.recipe); // re-rendering the data to the view
 }
 
 const addBookmarks = function () {
+
     if (model.motherSpecial.recipe.bookmarked === true)
         model.deleteBookmark(model.motherSpecial.recipe.id)
     else
         model.addBookmark(model.motherSpecial.recipe);
     recipeView.render(model.motherSpecial.recipe);
+    bookmarkView.render(model.motherSpecial.bookmarks);
 }
 
 
@@ -77,7 +87,6 @@ const init = () => {
     paginationData.listenClick(paginationListenEvent);
     recipeView.updateData(updateServings);
     recipeView.addRecipeBookmark(addBookmarks);
-
 }
 init();
 

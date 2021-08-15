@@ -5,7 +5,6 @@ class searchItem {
         const searchedValue = this.#parentEl.querySelector('.searchField').value;
         this.#parentEl.querySelector('.searchField').value = '';
         return searchedValue;
-
     }
     listenEvent(ev) { // click event listner for search
         this.#searchBtn.addEventListener('click', function (e) {

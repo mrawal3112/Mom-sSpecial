@@ -36,7 +36,7 @@
     flex-direction: row;
 }
 .items_list{
-    height:920px;
+    height:57.5rem;
     width: 25%;
     border-bottom-left-radius: 25px;
     background-color: #80808024;
@@ -51,6 +51,7 @@
     flex-direction: row;
 }
 .recipe_infoContainer{
+    position: relative;
     width: 75%;
     height: 750px;
     border-bottom-right-radius: 25px;
@@ -58,7 +59,7 @@
 .item_image{
     width: 100%;
     height: 300px;
-    
+    z-index:-1;
 }
 .item_image img{
     width: 100%;
@@ -147,7 +148,7 @@
     display: flex;
     flex-direction: row;
     padding: 18px;
-    margin-left: 200px;
+    margin-left: 22rem;
     width: 150px;
     height:53px;
 }
@@ -194,7 +195,7 @@
     position: absolute;
     background-color: #FFFFFF;
     top: 37%;
-    left: 57.5%;
+    left: 50%;
     color: #F9102C;
     box-shadow: 2px 2px 6px #808080c2;
     border-radius: 25px;
@@ -285,7 +286,7 @@ margin-left: 6px;
     display: flex;
     flex-direction: row;
     height: 82.5px;
-    width: 265px;
+    width: auto;
     border-bottom: 1px solid white;
 }
 
@@ -307,7 +308,7 @@ margin-left: 6px;
     text-overflow: ellipsis;
     white-space: nowrap; 
 }
-.itemData h4{color: #F9102C;}
+.itemData h3{color: #F9102C;}
 .itemData h6{margin-top:2px;color: #00000099;}
 .itemData a{text-decoration: none;}
 
@@ -335,6 +336,7 @@ margin-left: 6px;
 .initialMessage{
     font-family: 'Quattrocento Sans', sans-serif;
     text-align: center;
+    /* margin-top: 10rem; */
 }
 .initialMessage h1{
     color: #F9102C;
@@ -414,4 +416,31 @@ font-size: 15px;
     height: 25px;
     margin-top: 40px;
     cursor: pointer;
+}
+.bookmark_list_box{
+    width: 20rem ;
+    height: auto;
+    max-width: 20rem;
+    max-height: 51rem;
+    min-height:6rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background-color: rgb(253, 146, 146);
+    opacity: 0;
+}
+.message{
+    width: 20rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+}
+.messageImage{
+    width: 2rem;
+    height: 2rem;
+}
+.message p {
+    font-size: medium;
+    color: black;
 }

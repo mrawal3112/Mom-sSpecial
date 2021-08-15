@@ -1,7 +1,7 @@
 import views from './views.js';
 
-class searchResult extends views {
-    _recipeContainer = document.querySelector('.items');
+class bookmarkView extends views {
+    _recipeContainer = document.querySelector('.bookmark__list');
     _generatehtmlData() {
         return this._recipeData.map(function (items) {
             return `
@@ -10,7 +10,7 @@ class searchResult extends views {
                         <img src='${items.image_url}'>
                     </div>
                     <div class='itemData'>
-                        <a href='#${items.id}'><h3>${items.title}</h3></a>
+                        <a href='#${items.id}'><h4>${items.title}</h4></a>
                         <h6>${items.publisher}</h6>
                     </div>
                 </div>
@@ -19,4 +19,4 @@ class searchResult extends views {
     }
 }
 
-export default new searchResult();
+export default new bookmarkView();
