@@ -59,25 +59,30 @@
 .item_image{
     width: 100%;
     height: 300px;
-    z-index:-1;
+    z-index:1;
 }
 .item_image img{
     width: 100%;
     height: 300px;
     filter: blur(1px);
     opacity: 0.5;
-
+    position: relative;
+    z-index:1;
 }
 .item_recipeInfo{
     width: 100%;
     height: 85px;
     background-color: rgb(196 196 196 / 16%);
+    position: relative;
+z-index: 2;
 }
 .item_ingredients{
     width: 100%;
     height: 362px;
     background-color: rgb(196 196 196 / 25%);
     padding-bottom: 11px;
+    position: relative;
+z-index:3;
 }
 .item_originalSource
 {
@@ -86,6 +91,8 @@
     border-bottom-right-radius: 25px;
     background-color: #f9f9f980;
     padding-bottom: 10px;
+    position: relative;
+z-index:4;
 }
 .websiteInfo{
     display: flex;
@@ -200,6 +207,7 @@
     box-shadow: 2px 2px 6px #808080c2;
     border-radius: 25px;
     transform: translateX(-50%);
+    z-index: 10;
 }
 .item_recipeInfo
 {
@@ -422,12 +430,14 @@ font-size: 15px;
     height: auto;
     max-width: 20rem;
     max-height: 51rem;
-    min-height:6rem;
+    min-height:5rem;
     position: absolute;
-    right: 1rem;
-    top: 1rem;
-    background-color: rgb(253, 146, 146);
+    right: 7.5rem;
+    top: 8.5rem;
+    background-color: #ededed;
+    z-index: 1000;
     opacity: 0;
+    visibility: hidden;
 }
 .message{
     width: 20rem;
@@ -443,4 +453,9 @@ font-size: 15px;
 .message p {
     font-size: medium;
     color: black;
+}
+
+.bookmark:hover .bookmark_list_box{
+    opacity: 1;
+    visibility: unset;
 }

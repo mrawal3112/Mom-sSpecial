@@ -55,14 +55,14 @@ export const updateServingsData = function (newData) { // function to update qua
 export const deleteBookmark = function (id) {
     const index = motherSpecial.bookmarks.findIndex(el => el.id === id)
     motherSpecial.bookmarks.splice(index, 1);
-    console.log(motherSpecial.bookmarks);
+    // console.log(motherSpecial.bookmarks);
     if (id === motherSpecial.recipe.id)
         motherSpecial.recipe.bookmarked = false;
 }
 
 export const addBookmark = function (recipe) {
     motherSpecial.bookmarks.push(recipe);
-    console.log(motherSpecial.bookmarks);
+    // console.log(motherSpecial.bookmarks);
     if (recipe.id == motherSpecial.recipe.id)
         motherSpecial.recipe.bookmarked = true;
 }

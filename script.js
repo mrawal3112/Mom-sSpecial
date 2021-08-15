@@ -5,17 +5,19 @@ import recipeView from '../../views/recipeView.js';
 import searchItem from '../../views/searchItem.js';
 import searchedResults from '../../views/searchResult.js';
 import paginationData from '../../views/paginationView.js';
-import bookmarkView from '../../views/bookmarkView.js';
+import bookmarkView from './views/bookmarkView.js';
 
-const bookmarkButton = document.querySelector('.bookmark');
-const bookmarkBox = document.querySelector('.bookmark_list_box');
-const recipeBox = document.querySelector('.recipe_infoContainer');
-bookmarkButton.addEventListener('click', function () {
-    bookmarkBox.style.opacity = 1;
-});
-recipeBox.addEventListener('click', function () {
-    bookmarkBox.style.opacity = 0;
-})
+// const bookmarkButton = document.querySelector('.bookmark');
+// const bookmarkBox = document.querySelector('.bookmark_list_box');
+// const recipeBox = document.querySelector('.recipe_infoContainer');
+// bookmarkButton.addEventListener('click', function () {
+//     bookmarkBox.style.opacity = 1;
+//     bookmarkBox.style.visibility = 'unset';
+// });
+// recipeBox.addEventListener('click', function () {
+//     bookmarkBox.style.opacity = 0;
+//     bookmarkBox.style.visibility = 'hidden';
+// })
 const allRecipes = async () => {
     try {
 
