@@ -157,7 +157,7 @@ z-index:4;
     padding: 18px;
     margin-left: 22rem;
     width: 150px;
-    height:53px;
+    height:4rem;
 }
 
 .bookmark:hover,.bookmark:focus{
@@ -444,7 +444,7 @@ font-size: 15px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 1.25rem;
+    margin-top: .75rem;
 }
 .messageImage{
     width: 2rem;
