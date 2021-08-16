@@ -26,6 +26,7 @@ class recipeView extends views {
     }
     _generatehtmlData() { // Recipe Container
 
+        let ingredientsCount = this._recipeData.ingredients.length;
         return `
                 <div class='item_image'>
                     <img src='${this._recipeData.image_url}'>
@@ -69,8 +70,8 @@ class recipeView extends views {
                                 <div>
                                 <img src='Images/checked.png' style='width: 15px; height: 15px; margin-top: 0px;'>
                                 </div>
-                                <div>
-                                    <h3 style='margin-left: 5px;'>${ing.quantity ? new Fraction(ing.quantity).toString() : ''} ${ing.unit}  ${ing.description}</h3>
+                                <div class='ingredientsList'>
+                                    <p style='margin-left: 5px; max-height:48px;'>${ing.quantity ? new Fraction(ing.quantity).toString() : ''} ${ing.unit}  ${ing.description}</p>
                                 </div >
                                 </li > `}).join('')}
                     </ul>
@@ -89,3 +90,5 @@ class recipeView extends views {
 
 export default new recipeView();
 
+
+// height:${368 / ingredientsCount}px;

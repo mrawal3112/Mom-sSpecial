@@ -1,461 +1,542 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
-.bg-blur{
-  background-image: url("Images/background.jpg");
-  filter: blur(8px);
-  height: 1000px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;    
+
+.bg-blur {
+	background-image: url("Images/background.jpg");
+	filter: blur(8px);
+	height: 1000px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .container {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.recipe_container
-{
-    margin: 55px 120px;
-    width: auto;
-    height: 1000px;
-    border-radius: 25px;
-    background-color: white;    
-}
-.recipe_header{
-    padding: 15px;
-    height: 80px;
-    width: auto;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    background-color: #F9F5F3 ;
-    display: flex;
-    flex-direction: row;
-}
-.items_list{
-    height:57.5rem;
-    width: 25%;
-    border-bottom-left-radius: 25px;
-    background-color: #80808024;
-    /* background-color: white ; */
-}
-.items{
-    height:825px;
-    width: 100%;
-}
-.recipe_body{
-    display: flex;
-    flex-direction: row;
-}
-.recipe_infoContainer{
-    position: relative;
-    width: 75%;
-    height: 750px;
-    border-bottom-right-radius: 25px;
-}
-.item_image{
-    width: 100%;
-    height: 300px;
-    z-index:1;
-}
-.item_image img{
-    width: 100%;
-    height: 300px;
-    filter: blur(1px);
-    opacity: 0.5;
-    position: relative;
-    z-index:1;
-}
-.item_recipeInfo{
-    width: 100%;
-    height: 85px;
-    background-color: rgb(196 196 196 / 16%);
-    position: relative;
-z-index: 2;
-}
-.item_ingredients{
-    width: 100%;
-    height: 362px;
-    background-color: rgb(196 196 196 / 25%);
-    padding-bottom: 11px;
-    position: relative;
-z-index:3;
-}
-.item_originalSource
-{
-    width: 100%;
-    height: auto;
-    border-bottom-right-radius: 25px;
-    background-color: #f9f9f980;
-    padding-bottom: 10px;
-    position: relative;
-z-index:4;
-}
-.websiteInfo{
-    display: flex;
-    flex-direction: row;
-    width: 260px;
-    height: 53px;
-    margin-left: 50px;
-}
-.websiteLogo
-{
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-}
-.logoImage{
-    width:40px;
-    height: 40px;
-}
-.siteName
-{
-    font-family: 'Permanent Marker', cursive;
-    padding: 5px;
-}
-.siteName a{
-    text-decoration: none;
-    cursor: pointer;
-    color: black;
-
-}
-.searchBox{
-    display: flex;
-    flex-direction: row;
-    width: 360px;
-    height: 53px;
-    margin-left:10rem;
-}
-.searchBox input[type='text']{
-    padding-left: 20px;
-    font-family: 'Quattrocento Sans', sans-serif;;
-    margin: 10px;
-    height: 35px;
-    width: 250px;
-    border-radius: 25px;
-    border: 0.5px solid gray;
-    outline: none;
-}
-.searchBox button{
-    margin: 10px;
-    height: 35px;
-    width: 100px;
-    border-radius: 25px;
-    border: 0.5px solid gray;
-    margin-left: -50px;
-    font-family: 'Quattrocento Sans', sans-serif;
-    font-size: medium;
-    outline: none;
-    cursor: pointer;
-}
-.bookmark{
-    display: flex;
-    flex-direction: row;
-    padding: 18px;
-    margin-left: 22rem;
-    width: 150px;
-    height:4rem;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
-.bookmark:hover,.bookmark:focus{
-    background-color: rgb(253, 146, 146);
-}
-.bookmarkLogo,.bookmarkImage{
-    width: 20px;
-    height: 20px;
-}
-.bookmarkSign{
-    width: 20px;
-    height: 20px;
-    margin: 10.5px;
-}
-.bookmarkImg{
-    width:40px;
-    height: 40px;
-    margin-top: 3%;
-    margin-left: 200px;
-    border-radius: 25px;
+.recipe_container {
+	margin: 55px 120px;
+	width: auto;
+	height: 1000px;
+	border-radius: 25px;
+	background-color: white;
 }
 
-.bookmarkFill{
-    background-color: rgb(253, 146, 146);
+.recipe_header {
+	padding: 15px;
+	height: 80px;
+	width: auto;
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	background-color: #F9F5F3;
+	display: flex;
+	flex-direction: row;
 }
 
-.unbookmark{
-    background-color: none;
+.items_list {
+	height: 57.5rem;
+	width: 25%;
+	border-bottom-left-radius: 25px;
+	background-color: #80808024;
+	/* background-color: white ; */
 }
 
-.bookmarkTitle{
-    margin-left: 5px;
-    padding: 2px;
-    font-family: 'Quattrocento Sans', sans-serif;
+.items {
+	height: 825px;
+	width: 100%;
 }
-.itemName
-{
-    font-family: 'Quattrocento Sans', sans-serif;
-    max-width: 700px;
-    width: auto;
-    padding: 12px;
-    position: absolute;
-    background-color: #FFFFFF;
-    top: 37%;
-    left: 50%;
-    color: #F9102C;
-    box-shadow: 2px 2px 6px #808080c2;
-    border-radius: 25px;
-    transform: translateX(-50%);
-    z-index: 10;
+
+.recipe_body {
+	display: flex;
+	flex-direction: row;
 }
-.item_recipeInfo
-{
-    display: flex;
-    flex-direction: row;
+
+.recipe_infoContainer {
+	position: relative;
+	width: 75%;
+	height: 750px;
+	border-bottom-right-radius: 25px;
 }
-.cookingTime,.peopleQuantity
-{
-    display: flex;
-    flex-direction: row;
-    width: 175px ;
-    height: 50px;
-    margin-left: 50px;
-    margin-top: 35px;
+
+.item_image {
+	width: 100%;
+	height: 300px;
+	z-index: 1;
 }
-.clockImage{
-    width: 30px;
-    height: 30px;
-    padding: 6px;
+
+.item_image img {
+	width: 100%;
+	height: 300px;
+	filter: blur(1px);
+	opacity: 0.5;
+	position: relative;
+	z-index: 1;
 }
-.clockImage img{
-    width: 30px;
-    height: 30px;
+
+.item_recipeInfo {
+	width: 100%;
+	height: 85px;
+	background-color: rgb(196 196 196 / 16%);
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
 }
-.peopleImage{
-    width: 30px;
-    height: 30px;
-    padding: 6px;
-}
-.peopleImage img{
-    width: 30px;
-    height: 30px;
-}
-.timeTaken,.quantity{
-font-family: 'Quattrocento Sans', sans-serif;
-padding: 10px;
-margin-left: 6px;
-}
-.item_ingredients h2,.item_originalSource h2
-{
-    font-family: 'Quattrocento Sans', sans-serif;
-    text-align: center;
-    padding: 18px;
-    /* margin-top: 10px; */
-    color: #F9102C;
-    overflow: hidden;
-}
-.item_ingredients ul{
-    font-family: 'Quattrocento Sans', sans-serif;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 5px;
+
+.item_ingredients {
+	width: 100%;
+	height: 362px;
+	background-color: rgb(196 196 196 / 25%);
+	padding-bottom: 11px;
+	position: relative;
+	z-index: 3;
+	overflow: auto;
 }
 .item_ingredients li{
-    display: flex;
-    flex-direction: row;
-    margin-left:2.5rem;
-    margin-top: 5px;
-    width: 225px;
-    font-size: 12px;
-
+    margin: 1rem;
 }
+
+.item_originalSource {
+	width: 100%;
+	height: auto;
+	border-bottom-right-radius: 25px;
+	background-color: #f9f9f980;
+	padding-bottom: 10px;
+	position: relative;
+	z-index: 4;
+	overflow: hidden;
+}
+
+.websiteInfo {
+	display: flex;
+	flex-direction: row;
+	width: 260px;
+	height: 53px;
+	margin-left: 50px;
+}
+
+.websiteLogo {
+	width: 40px;
+	height: 40px;
+	margin: 5px;
+}
+
+.logoImage {
+	width: 40px;
+	height: 40px;
+}
+
+.siteName {
+	font-family: 'Permanent Marker', cursive;
+	padding: 5px;
+}
+
+.siteName a {
+	text-decoration: none;
+	cursor: pointer;
+	color: black;
+}
+
+.searchBox {
+	display: flex;
+	flex-direction: row;
+	width: 360px;
+	height: 53px;
+	margin-left: 10rem;
+}
+
+.searchBox input[type='text'] {
+	padding-left: 20px;
+	font-family: 'Quattrocento Sans', sans-serif;
+	;
+	margin: 10px;
+	height: 35px;
+	width: 250px;
+	border-radius: 25px;
+	border: 0.5px solid gray;
+	outline: none;
+}
+
+.searchBox button {
+	margin: 10px;
+	height: 35px;
+	width: 100px;
+	border-radius: 25px;
+	border: 0.5px solid gray;
+	margin-left: -50px;
+	font-family: 'Quattrocento Sans', sans-serif;
+	font-size: medium;
+	outline: none;
+	cursor: pointer;
+}
+
+.bookmark {
+	display: flex;
+	flex-direction: row;
+	padding: 18px;
+	margin-left: 22rem;
+	width: 150px;
+	height: 4rem;
+}
+
+.bookmark:hover,
+.bookmark:focus {
+	background-color: rgb(253, 146, 146);
+}
+
+.bookmarkLogo,
+.bookmarkImage {
+	width: 20px;
+	height: 20px;
+}
+
+.bookmarkSign {
+	width: 20px;
+	height: 20px;
+	margin: 10.5px;
+}
+
+.bookmarkImg {
+	width: 40px;
+	height: 40px;
+	margin-top: 3%;
+	margin-left: 200px;
+	border-radius: 25px;
+}
+
+.bookmarkFill {
+	background-color: rgb(253, 146, 146);
+}
+
+.unbookmark {
+	background-color: none;
+}
+
+.bookmarkTitle {
+	margin-left: 5px;
+	padding: 2px;
+	font-family: 'Quattrocento Sans', sans-serif;
+}
+
+.itemName {
+	font-family: 'Quattrocento Sans', sans-serif;
+	max-width: 700px;
+	width: auto;
+	padding: 12px;
+	position: absolute;
+	background-color: #FFFFFF;
+	top: 37%;
+	left: 50%;
+	color: #F9102C;
+	box-shadow: 2px 2px 6px #808080c2;
+	border-radius: 25px;
+	transform: translateX(-50%);
+	z-index: 10;
+	max-width: 40rem;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.item_recipeInfo {
+	display: flex;
+	flex-direction: row;
+}
+
+.cookingTime,
+.peopleQuantity {
+	display: flex;
+	flex-direction: row;
+	width: 175px;
+	height: 50px;
+	margin-left: 50px;
+	margin-top: 35px;
+}
+
+.clockImage {
+	width: 30px;
+	height: 30px;
+	padding: 6px;
+}
+
+.clockImage img {
+	width: 30px;
+	height: 30px;
+}
+
+.peopleImage {
+	width: 30px;
+	height: 30px;
+	padding: 6px;
+}
+
+.peopleImage img {
+	width: 30px;
+	height: 30px;
+}
+
+.timeTaken,
+.quantity {
+	font-family: 'Quattrocento Sans', sans-serif;
+	padding: 10px;
+	margin-left: 6px;
+}
+
+.item_ingredients h2,
+.item_originalSource h2 {
+	font-family: 'Quattrocento Sans', sans-serif;
+	text-align: center;
+	padding: 18px;
+	margin-top: 10px;
+	color: #F9102C;
+	overflow: hidden;
+}
+
+.item_ingredients ul {
+	font-family: 'Quattrocento Sans', sans-serif;
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 5px;
+}
+
+.item_ingredients li {
+	display: flex;
+	flex-direction: row;
+	margin-left: 2.5rem;
+	margin-top: 5px;
+	width: 225px;
+	font-size: 12px;
+}
+
 .item_originalSource pre {
-    font-family: 'Quattrocento Sans', sans-serif;
-    text-align: center;
-}
-.originalSite{
-    width: 120px;
-    height: 40px;
-    border-radius: 25px;
-    border: 0.5px solid gray;
-    background-color: white;
-    margin-top: 25px;
-    margin-left: 45%;
-    cursor: pointer;
-    outline: none;
-    font-family: 'Quattrocento Sans', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-}
-.itemBox{
-    display: flex;
-    flex-direction: row;
-    height: 82.5px;
-    width: auto;
-    border-bottom: 1px solid white;
+	font-family: 'Quattrocento Sans', sans-serif;
+	text-align: center;
 }
 
-.itemImage{
-    width:60px;
-    height: 60px;
-    padding: 10px;
-}
-.itemImage img{
-    width: 60px;
-    height: 60px;
-}
-.itemData{
-    font-family: 'Quattrocento Sans', sans-serif;
-    padding: 15px;
-    margin-top: 5px;
-    margin-left: 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap; 
-}
-.itemData h3{color: #F9102C;}
-.itemData h6{margin-top:2px;color: #00000099;}
-.itemData a{text-decoration: none;}
-
-.nextPage{
-    width: 80px ;
-    height: 30px;
-    border: 0.5px solid red;
-    border-radius: 25px;
-    outline: none;
-    margin-left: 80px;
-    margin-top: 15px;
-    cursor: pointer;
-}
-.previousPage{
-    width: 80px ;
-    height: 30px;
-    border: 0.5px solid red;
-    border-radius: 25px;
-    outline: none;
-    margin-left: 20px;
-    margin-top: 15px;
-    cursor: pointer;
+.originalSite {
+	width: 120px;
+	height: 40px;
+	border-radius: 25px;
+	border: 0.5px solid gray;
+	background-color: white;
+	margin-top: 15px;
+	margin-left: 45%;
+	cursor: pointer;
+	outline: none;
+	font-family: 'Quattrocento Sans', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
 }
 
-.initialMessage{
-    font-family: 'Quattrocento Sans', sans-serif;
-    text-align: center;
-    /* margin-top: 10rem; */
-}
-.initialMessage h1{
-    color: #F9102C;
-    padding-top: 50px;
-}
-.initialMessage p{
-    padding: 30px;
-    margin : 0px 20px;
-    font-size: medium;
-    font-weight: bold;
-}
-.spinner{
-    width: 60px;
-    height: 60px;
-    margin-left: 50%;
-    margin-top: 10%;
-}
-.spinnerRoll{
-    width: 60px;
-    height: 60px;
-    animation: rotate 2s infinite linear;
-}
-@keyframes rotate{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-.errorMessage{
-    display: flex;
-    flex-direction:row;
-    padding-top: 50px;
-    margin-left: 10%;
-}
-.errorImage{
-    width: 50px;
-    height: 50px;
-    margin-top: 5px;
-}
-.message{
-font-family: 'Quattrocento Sans', sans-serif;
-padding: 10px;
-margin-left: 10px;
-width: 400px;
-font-weight: bold;
-font-size: 15px;
+.itemBox {
+	display: flex;
+	flex-direction: row;
+	height: 82.5px;
+	width: auto;
+	border-bottom: 1px solid white;
 }
 
-.pagination{
-    margin-top: 10px;
-    height: 60px;
-    display:inline-flex;
-    flex-direction: row;
-    /* display: none; */
+.itemImage {
+	width: 60px;
+	height: 60px;
+	padding: 10px;
 }
-.pagination a{
-    text-decoration: none;
-    color: black;
+
+.itemImage img {
+	width: 60px;
+	height: 60px;
 }
-.bookmarked{
-    width:40px ;
-    height: 40px;
-    background-color: white;
+
+.itemData {
+	font-family: 'Quattrocento Sans', sans-serif;
+	padding: 15px;
+	margin-top: 5px;
+	margin-left: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
-.minusSymbol
-{
-    width: 25px;
-    height: 25px;
-    margin-top: 40px;
-    margin-left: 20px;
-    cursor: pointer;
+
+.itemData h3 {
+	color: #F9102C;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
-.addSymbol{
-    width: 25px;
-    height: 25px;
-    margin-top: 40px;
-    cursor: pointer;
+
+.itemData h6 {
+	margin-top: 2px;
+	color: #00000099;
 }
-.bookmark_list_box{
-    width: 20rem ;
-    height: auto;
-    max-width: 20rem;
-    max-height: 51rem;
-    min-height:5rem;
-    position: absolute;
-    right: 7.5rem;
-    top: 8.5rem;
-    background-color: #ededed;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
+
+.itemData a {
+	text-decoration: none;
 }
-.message{
-    width: 20rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: .75rem;
+
+.nextPage {
+	width: 80px;
+	height: 30px;
+	border: 0.5px solid red;
+	border-radius: 25px;
+	outline: none;
+	margin-left: 8rem;
+	margin-top: 1.5rem;
+	cursor: pointer;
 }
-.messageImage{
-    width: 2rem;
-    height: 2rem;
+
+.previousPage {
+	width: 80px;
+	height: 30px;
+	border: 0.5px solid red;
+	border-radius: 25px;
+	outline: none;
+	margin-left: 2rem;
+	margin-top: 1.5rem;
+	cursor: pointer;
 }
+
+.initialMessage {
+	font-family: 'Quattrocento Sans', sans-serif;
+	text-align: center;
+	/* margin-top: 10rem; */
+}
+
+.initialMessage h1 {
+	color: #F9102C;
+	padding-top: 50px;
+}
+
+.initialMessage p {
+	padding: 30px;
+	margin: 0px 20px;
+	font-size: medium;
+	font-weight: bold;
+}
+
+.spinner {
+	width: 60px;
+	height: 60px;
+	margin-left: 50%;
+	margin-top: 10%;
+}
+
+.spinnerRoll {
+	width: 60px;
+	height: 60px;
+	animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.errorMessage {
+	display: flex;
+	flex-direction: row;
+	padding-top: 50px;
+	margin-left: 10%;
+}
+
+.errorImage {
+	width: 50px;
+	height: 50px;
+	margin-top: 5px;
+}
+
+.message {
+	font-family: 'Quattrocento Sans', sans-serif;
+	padding: 10px;
+	margin-left: 10px;
+	width: 400px;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.pagination {
+	margin-top: 10px;
+	height: 60px;
+	display: inline-flex;
+	flex-direction: row;
+	/* display: none; */
+}
+
+.pagination a {
+	text-decoration: none;
+	color: black;
+}
+
+.bookmarked {
+	width: 40px;
+	height: 40px;
+	background-color: white;
+}
+
+.minusSymbol {
+	width: 25px;
+	height: 25px;
+	margin-top: 40px;
+	margin-left: 20px;
+	cursor: pointer;
+}
+
+.addSymbol {
+	width: 25px;
+	height: 25px;
+	margin-top: 40px;
+	cursor: pointer;
+}
+
+.bookmark_list_box {
+	width: 20rem;
+	height: auto;
+	max-width: 20rem;
+	max-height: 51rem;
+	min-height: 5rem;
+	position: absolute;
+	right: 7.5rem;
+	top: 8.5rem;
+	background-color: #ededed;
+	z-index: 1000;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.message {
+	width: 20rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: .75rem;
+}
+
+.messageImage {
+	width: 2rem;
+	height: 2rem;
+}
+
 .message p {
-    font-size: medium;
-    color: black;
+	font-size: medium;
+	color: black;
 }
 
-.bookmark:hover .bookmark_list_box{
-    opacity: 1;
-    visibility: unset;
+.bookmark:hover .bookmark_list_box {
+	opacity: 1;
+	visibility: unset;
+}
+
+.ingredientsList p {
+	font-weight: bold;
+	font-size: .9rem;
+    overflow: auto;
 }
